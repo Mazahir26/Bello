@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Job.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Text_Edit.tscn" type="PackedScene" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.313726, 0.313726, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Job" type="HBoxContainer" groups=[
+"Job",
+]]
+anchor_left = 0.01
+anchor_top = 0.008
+anchor_right = 0.268
+anchor_bottom = 0.133
+margin_left = -0.240001
+margin_top = 0.2
+margin_right = -0.432007
+margin_bottom = 0.199997
+rect_min_size = Vector2( 250, 75 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 7.0
+margin_right = 257.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 250, 75 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_right = 250.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Heading" parent="PanelContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 250.0
+margin_bottom = 37.0
+focus_mode = 1
+custom_styles/focus = SubResource( 4 )
+caret_blink_speed = 0.5
+
+[node name="Discreption" parent="PanelContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_left = 0.0
+margin_top = 37.0
+margin_right = 250.0
+margin_bottom = 75.0
+focus_mode = 1
+custom_styles/read_only = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+placeholder_text = "Context"
+caret_blink_speed = 0.5
+[connection signal="gui_input" from="PanelContainer/VBoxContainer" to="." method="_on_VBoxContainer_gui_input"]

@@ -1,0 +1,313 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Roboto/Roboto-Light.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/background.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Main_Menu.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.627451, 0.627451, 0.627451, 1 )
+border_color = Color( 0.27451, 0.956863, 0.282353, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 0.54902 )
+border_color = Color( 0, 0, 0, 0.54902 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.4, 0.4, 0.4, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.411765, 0.411765, 0.411765, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.823529, 0.823529, 0.823529, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="Main_Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 8.0
+margin_bottom = 8.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.219608 )
+margin_left = -566.493
+margin_top = -393.507
+margin_right = 6266.51
+margin_bottom = 4600.49
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 176, 76 )
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BELLO"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main_Menu" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -143.0
+margin_top = -157.0
+margin_right = 143.0
+margin_bottom = 252.0
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Main_Menu"]
+margin_right = 285.0
+margin_bottom = 38.0
+mouse_filter = 1
+size_flags_vertical = 5
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+text = "Main Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Control" parent="Main_Menu"]
+margin_right = 15.0
+margin_bottom = 17.0
+
+[node name="Theme" type="Button" parent="Main_Menu/Options"]
+margin_left = 900.0
+margin_top = 113.0
+margin_right = 1170.0
+margin_bottom = 173.0
+rect_min_size = Vector2( 270, 60 )
+focus_mode = 0
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Coming Soon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Button" parent="Main_Menu/Options"]
+margin_left = 900.0
+margin_top = 193.0
+margin_right = 1170.0
+margin_bottom = 253.0
+rect_min_size = Vector2( 270, 60 )
+focus_mode = 0
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Main_Menu/Options"]
+margin_left = 900.0
+margin_top = 273.0
+margin_right = 1170.0
+margin_bottom = 333.0
+rect_min_size = Vector2( 270, 60 )
+focus_mode = 0
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+text = "Back"
+
+[node name="start" type="Control" parent="Main_Menu"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="Main_Menu/start"]
+margin_left = 7.0
+margin_top = 313.0
+margin_right = 277.0
+margin_bottom = 373.0
+rect_min_size = Vector2( 270, 60 )
+focus_mode = 0
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Button" parent="Main_Menu/start"]
+margin_left = 7.0
+margin_top = 233.0
+margin_right = 277.0
+margin_bottom = 293.0
+rect_min_size = Vector2( 270, 60 )
+focus_mode = 0
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+text = "Options"
+
+[node name="Newproject" type="Button" parent="Main_Menu/start"]
+margin_left = 7.0
+margin_top = 153.0
+margin_right = 277.0
+margin_bottom = 213.0
+rect_min_size = Vector2( 270, 60 )
+focus_mode = 0
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+text = "New Project"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="Main_Menu/start"]
+margin_left = 7.0
+margin_top = 73.0
+margin_right = 277.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 270, 60 )
+focus_mode = 0
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+text = "Continue"
+
+[node name="Credits" type="Control" parent="Main_Menu"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crdits" type="Label" parent="Main_Menu/Credits"]
+margin_left = 895.0
+margin_top = 57.0
+margin_right = 1167.0
+margin_bottom = 385.0
+custom_fonts/font = SubResource( 13 )
+text = "Something
+Blalscscbs"
+align = 1
+
+[node name="Back" type="Button" parent="Main_Menu/Credits"]
+margin_left = 903.0
+margin_top = 273.0
+margin_right = 1173.0
+margin_bottom = 333.0
+rect_min_size = Vector2( 270, 60 )
+focus_mode = 0
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="button_down" from="Main_Menu/Options/Credits" to="." method="_on_Credits_button_down"]
+[connection signal="button_down" from="Main_Menu/Options/Back" to="." method="_on_Back_button_down"]
+[connection signal="button_down" from="Main_Menu/start/Exit" to="." method="_on_Exit_button_down"]
+[connection signal="button_down" from="Main_Menu/start/Options" to="." method="_on_Options_button_down"]
+[connection signal="button_down" from="Main_Menu/start/Newproject" to="." method="_on_Newproject_button_down"]
+[connection signal="button_down" from="Main_Menu/start/Continue" to="." method="_on_Continue_button_down"]
+[connection signal="button_down" from="Main_Menu/Credits/Back" to="." method="_on_BackCredits_button_down"]

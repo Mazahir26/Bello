@@ -2,7 +2,7 @@
 
 Its a Simple Project Manager.
 
-Bello is Minimal and easy to use,it can be used to manage and organise
+Bello is Minimal and easy to use, it can be used to manage and organise
 any kind of project. You can make Bello as Complex as you want or keep it 
 as simple as your project suits.
 
@@ -11,7 +11,7 @@ as simple as your project suits.
 
 ## Exports
 
-Not here for code, Just want to grab the Software and get your Dirty.
+Not here for code, Just want to grab the Software and get your hands Dirty.
 you can find the exports for Windows and Linux Here
 
 ## Features

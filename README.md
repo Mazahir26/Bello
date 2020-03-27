@@ -4,7 +4,7 @@ Its a Simple Project Manager.
 
 Bello is Minimal and easy to use,it can be used to manage and organise
 any kind of project. You can make Bello as Complex as you want or keep it 
-as simple as your project suit.
+as simple as your project suits.
 
 - Bello is inspired from Trelo.
 - Developed in Godot 3.2

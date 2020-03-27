@@ -16,10 +16,10 @@ you can find the exports for Windows and Linux Here
 
 ## Features
 
-- **Very Minimal Design
-- **Easy to Use
-- **Project can be saved
-_ **Very simple UI
+- Very Minimal Design
+- Easy to Use
+- Project can be saved
+- Very simple UI
 
 
 ## Credits

@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Job_Manager.gd" type="Script" id=1]
 [ext_resource path="res://Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/Jobs_Manager.gd" type="Script" id=3]
 [ext_resource path="res://Scene/Job.tscn" type="PackedScene" id=4]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 1, 0.992157, 0.992157, 1 )
-border_color = Color( 0.27451, 0.956863, 0.282353, 1 )
+border_width_bottom = 10
+border_color = Color( 1, 0.992157, 0.992157, 1 )
 border_blend = true
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -41,11 +42,6 @@ expand_margin_left = 1.0
 size = 24
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.0313726, 0.0980392, 0.0313726, 0 )
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
 [node name="Job_manager" type="PanelContainer" groups=[
 "job_manager",
 ]]
@@ -53,9 +49,10 @@ self_modulate = Color( 0.27451, 0.956863, 0.282353, 1 )
 margin_left = 62.0
 margin_top = 102.0
 margin_right = 334.0
-margin_bottom = 524.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 272, 422 )
 mouse_filter = 2
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 8 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -63,7 +60,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 272.0
-margin_bottom = 422.0
+margin_bottom = 412.0
 mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -107,25 +104,18 @@ text = "X"
 expand_icon = true
 
 [node name="Planed_Manager" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 42.0
+margin_top = 41.0
 margin_right = 272.0
-margin_bottom = 383.0
+margin_bottom = 411.0
+rect_min_size = Vector2( 272, 370 )
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 4
 custom_constants/separation = 15
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 Job = ExtResource( 4 )
-
-[node name="ColorRect" type="Panel" parent="VBoxContainer"]
-margin_top = 387.0
-margin_right = 272.0
-margin_bottom = 422.0
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.1
-custom_styles/panel = SubResource( 7 )
 [connection signal="gui_input" from="VBoxContainer/HBoxContainer/Label" to="." method="_on_Label_gui_input"]
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/Label" to="." method="_on_Label_text_changed"]
 [connection signal="button_down" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_button_down"]

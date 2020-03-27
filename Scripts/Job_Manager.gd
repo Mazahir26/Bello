@@ -3,6 +3,8 @@ extends VBoxContainer
 
 func drop_data(_pos, data):
 	if typeof(data) == TYPE_OBJECT :
+		if self.get_child_count() > 9 :
+			return 
 		var node = data.duplicate()
 		self.add_child(node)
 		data.queue_free()

@@ -96,3 +96,12 @@ func _on_Newproject_button_down() -> void:
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scene/Project.tscn")
 	pass # Replace with function body.
+
+
+func _on_Crdits_meta_clicked(meta) -> void:
+	var err = OS.shell_open(meta)
+	if (err == OK):
+		print("Opened link '%s' successfully!" % meta)
+	else:
+		print("Failed opening the link '%s'!" % meta)
+	pass # Replace with function body.

@@ -51,11 +51,12 @@ func Waring_not_saved():
 
 # about information and warning
 var info = ["You can Delete an event by dragging it to the Trashcan",
-			"This Project is Inspired by Terlo",
+			"This Project is Inspired by Terllo",
 			"This Software is made from Godot",
 			"This Project is Open Source",
 			"You can Delete a Panel by clicking on the 'X' Button on the Panel",
-			"You can Only Save one project at a time"]
+			"You can Only Save one project at a time",
+			"You can Edit the Title of a Panel by Double Clicking on the Title"]
 var waring = false
 func _ready() -> void:
 	$Warning.hide()
@@ -92,18 +93,15 @@ func Display_Warning(warning : String, node : Object) :
 
 
 func _on_OK_button_down() -> void:
-	if war :
+	if war and $Warning/warning_panel/Text.text == "Do You Want to Delete this Panel?" :
 		delete_panal.queue_free()
 		$Warning.hide()
-	if saved == false :
+	if saved == false and $Warning/warning_panel/Text.text == "Project is Not Saved, Do you want to return Home?":
 # warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Scene/Main_Menu.tscn")
 	pass # Replace with function body.
 
 
 func _on_Cancel_button_down() -> void:
-	if war :
-		$Warning.hide()
-	if saved == false :
-		$Warning.hide()
+	$Warning.hide()
 	pass # Replace with function body.

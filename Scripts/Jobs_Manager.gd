@@ -11,8 +11,12 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
+	self.margin_bottom = 300
 	if move :
+		
 		self.rect_global_position = Vector2(get_global_mouse_position().x-(self.rect_size.x/2),get_global_mouse_position().y)
+#	else :
+#		self.margin_bottom = $VBoxContainer/Planed_Manager.margin_bottom
 
 var move = false
 func _on_Label_gui_input(event: InputEvent) -> void:
@@ -36,7 +40,8 @@ func _input(event: InputEvent) -> void:
 	
 
 func Save_Table (tem : Dictionary) :
-	var tet = {Class : tem}
+	var tet = {Class : tem,
+			   "pos" : self.rect_global_position}
 	return tet
 	
 	
@@ -57,10 +62,19 @@ export(PackedScene) var Job
 func setup(data : Dictionary) :
 	var temp  = {}
 	temp = data[Class]
+	self.rect_global_position = conveter(data["pos"])
 	$VBoxContainer/Planed_Manager.Load_Table(temp)
 	pass
 
-
+func conveter(stri : String) :
+	var cords = stri
+	cords.erase(cords.find("("),1)
+	cords.erase(cords.find(")"),1)
+	cords.erase(cords.find(","),1)
+	var x = cords.left(cords.find(" "))
+	var y = cords.right(cords.find(" "))
+	cords = Vector2(x,y)
+	return cords
 
 
 func _on_Label_text_changed(new_text: String) -> void:
@@ -72,3 +86,8 @@ func _on_Button_button_down() -> void:
 	get_parent().Warning_Panel(self)
 #	self.queue_free()
 	pass # Replace with function body.
+
+
+func Child_count() :
+	return $VBoxContainer/Planed_Manager.get_child_count()
+	pass

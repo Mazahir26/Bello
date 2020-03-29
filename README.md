@@ -1,18 +1,17 @@
 # Bello
 
-Its a Simple Project Manager.
+It's a Simple Project Manager.
 
-Bello is Minimal and easy to use, it can be used to manage and organise
-any kind of project. You can make Bello as Complex as you want or keep it 
-as simple as your project needs.
+Bello is minimal and easy to use, it can be used to manage and organize
+any kind of project. You can make Bello as complex or as simple as your project needs.
 
-- Bello is inspired from Trello.
+- Bello is inspired from Trello (Atlassian).
 - Developed in Godot 3.2
 
 ## Exports
 
-Not here for code?, Just want to grab the Software and get your hands Dirty!
-you can find the application for Windows and Linux Here
+Not here for code? Just want to grab the Software and get your hands dirty?
+You can find the application for Windows and Linux Here
 
 ## Features
 
@@ -26,6 +25,6 @@ you can find the application for Windows and Linux Here
 
 
 ### ...
-Will you Use this code Commercially? Rest assured you can use it freely and without having to mention anything.
+Will you use this code Commercially? Rest assured, you can use it freely and without having to mention anything!
 
 

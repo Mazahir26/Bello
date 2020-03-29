@@ -18,9 +18,30 @@ func _on_zoomout_button_down() -> void:
 		$Camera2D.zoom += Vector2(0.2,0.2)
 	pass # Replace with function body.
 
-
+var nonode
+var nooffinished
 func _process(_delta: float) -> void:
+	Update_bar()
 	pass
+
+func Update_bar() :
+	var nodes = get_tree().get_nodes_in_group("job_manager")
+	nonode = 0
+	for i in nodes :
+		if i.call("Get_class") == "Finished" :
+			nooffinished = i.Child_count()
+		else :
+			nonode += i.Child_count()
+			
+	if (nonode + nooffinished) == 0 :
+		$ProgressBar.hide()
+	else :
+		$ProgressBar.show()
+		$ProgressBar.value = ((nooffinished*100) / (nonode+nooffinished))
+	
+	
+
+
 
 
 func _on_Save_button_down() -> void:
@@ -58,9 +79,15 @@ var info = ["You can Delete an event by dragging it to the Trashcan",
 			"You can Only Save one project at a time",
 			"You can Edit the Title of a Panel by Double Clicking on the Title"]
 var waring = false
+var Finishednode 
 func _ready() -> void:
 	$Warning.hide()
 	info_display()
+	var nodes = get_tree().get_nodes_in_group("job_manager")
+	for i in nodes :
+		if i.call("Get_class") == "Finished" :
+			Finishednode = i
+			$ProgressBar.show()
 	pass
 	
 func Warning(string  : String) :

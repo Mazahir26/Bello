@@ -11,11 +11,13 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
-	self.margin_bottom = 300
+	
 	if move :
-		
+		$VBoxContainer/Planed_Manager.margin_bottom = self.margin_bottom
 		self.rect_global_position = Vector2(get_global_mouse_position().x-(self.rect_size.x/2),get_global_mouse_position().y)
-#	else :
+	else :
+		self.margin_bottom = -50
+		$VBoxContainer/Planed_Manager.margin_bottom = 100
 #		self.margin_bottom = $VBoxContainer/Planed_Manager.margin_bottom
 
 var move = false
@@ -83,8 +85,11 @@ func _on_Label_text_changed(new_text: String) -> void:
 
 
 func _on_Button_button_down() -> void:
-	get_parent().Warning_Panel(self)
-#	self.queue_free()
+	if $VBoxContainer/Planed_Manager.get_child_count() == 0 :
+		self.queue_free()
+	else :
+		get_parent().Warning_Panel(self)
+
 	pass # Replace with function body.
 
 

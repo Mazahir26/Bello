@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Roboto/Roboto-Light.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Roboto-Light.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/background.png" type="Texture" id=3]
-[ext_resource path="res://Roboto/Roboto-Black.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Fonts/Roboto-Black.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scripts/Main_Menu.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -127,7 +127,6 @@ __meta__ = {
 }
 
 [node name="Options" type="Control" parent="Main_Menu"]
-visible = false
 margin_right = 15.0
 margin_bottom = 17.0
 

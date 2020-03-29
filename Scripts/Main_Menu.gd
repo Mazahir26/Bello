@@ -85,7 +85,7 @@ func _on_Continue_button_down() -> void:
 	else :
 # warning-ignore:return_value_discarded
 		Manger.load_Data = true
-		get_tree().change_scene("res://Scene/continue_Project.tscn")
+		get_tree().change_scene("res://Scene/Project.tscn")
 		
 	
 	pass # Replace with function body.

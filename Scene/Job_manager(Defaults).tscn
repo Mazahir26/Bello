@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Job_Manager.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=2]
@@ -15,31 +15,22 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0, 0, 0, 0.54902 )
-border_color = Color( 0, 0, 0, 0.54902 )
-border_blend = true
-corner_radius_top_left = 10
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.729412, 0.729412, 0.729412, 1 )
-border_color = Color( 1, 0.144531, 0.144531, 0.54902 )
-border_blend = true
-corner_radius_top_left = 10
-
-[sub_resource type="DynamicFont" id=4]
-size = 32
-font_data = ExtResource( 2 )
-
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0, 0, 0, 0.54902 )
 border_color = Color( 0, 0, 0, 0.54902 )
 border_blend = true
+corner_radius_top_left = 10
 corner_radius_top_right = 10
-expand_margin_left = 1.0
 
-[sub_resource type="DynamicFont" id=6]
-size = 24
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.729412, 0.729412, 0.729412, 1 )
+border_color = Color( 1, 0.144531, 0.144531, 0.54902 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
 font_data = ExtResource( 2 )
 
 [node name="Job_manager" type="PanelContainer" groups=[
@@ -70,14 +61,14 @@ custom_constants/separation = 2
 alignment = 1
 
 [node name="Label" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
-margin_right = 240.0
+margin_right = 272.0
 margin_bottom = 38.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 5
 size_flags_stretch_ratio = 1.23
-custom_styles/read_only = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/read_only = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/cursor_color = Color( 0.952941, 0.568627, 0.0784314, 1 )
 custom_colors/font_color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
@@ -87,21 +78,6 @@ align = 1
 editable = false
 selecting_enabled = false
 caret_blink = true
-
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 242.0
-margin_right = 272.0
-margin_bottom = 38.0
-rect_min_size = Vector2( 30, 20 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0.992157, 0.992157, 0.992157, 1 )
-custom_colors/font_color_hover = Color( 0.337255, 0.337255, 0.337255, 1 )
-custom_colors/font_color_pressed = Color( 0.192157, 0.192157, 0.192157, 1 )
-text = "X"
-expand_icon = true
 
 [node name="Planed_Manager" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 42.0
@@ -118,4 +94,3 @@ __meta__ = {
 Job = ExtResource( 4 )
 [connection signal="gui_input" from="VBoxContainer/HBoxContainer/Label" to="." method="_on_Label_gui_input"]
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/Label" to="." method="_on_Label_text_changed"]
-[connection signal="button_down" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_button_down"]

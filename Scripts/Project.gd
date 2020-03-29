@@ -26,9 +26,8 @@ var iny = -1
 var pos = Vector2(62,102)
 
 var j = 0
-var classes = []
+var classes = ["Plan","Finished","Doing"]
 func Setup(data) :
-	print(data)
 	var nodes = get_tree().get_nodes_in_group("job_manager")
 	
 	if nodes.size() == 0 :

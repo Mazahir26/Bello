@@ -12,7 +12,9 @@ as simple as your project needs.
 ## Exports
 
 Not here for code?, Just want to grab the Software and get your hands Dirty!
-you can find the application for Windows and Linux Here
+you can find the application for Windows and Linux 
+
+https://darkest-lab.itch.io/bello
 
 ## Features
 

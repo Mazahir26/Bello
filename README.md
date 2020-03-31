@@ -10,7 +10,6 @@ any kind of project. You can make Bello as complex or as simple as your project 
 
 ## Exports
 
-<<<<<<< HEAD
 Not here for code?, Just want to grab the Software and get your hands Dirty!
 you can find the application for Windows and Linux 
 
@@ -18,7 +17,7 @@ https://darkest-lab.itch.io/bello
 =======
 Not here for code? Just want to grab the Software and get your hands dirty?
 You can find the application for Windows and Linux Here
->>>>>>> dd559ace0363a53b381ec86d6b6e9ac5432e3d16
+
 
 ## Features
 

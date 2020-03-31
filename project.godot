@@ -20,7 +20,9 @@ config/description="Project Manager"
 run/main_scene="res://Scene/Main_Menu.tscn"
 boot_splash/image="res://Assets/Company_LOGO.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://LogoBello.png"
+config/macos_native_icon="res://LogoBello.png"
+config/windows_native_icon="res://LogoBello.png"
 
 [autoload]
 

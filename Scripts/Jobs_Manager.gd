@@ -23,19 +23,25 @@ func _process(_delta: float) -> void:
 var move = false
 func _on_Label_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton :
-		if event.is_action_pressed("ui_accept") and $VBoxContainer/HBoxContainer/Label.editable != true:
-			move = true
-		if event.doubleclick :
-			$VBoxContainer/HBoxContainer/Label.editable = true
-			move = false
+		if event.is_action_pressed("ui_accept") :
+			if  $VBoxContainer/HBoxContainer/Label.is_class("LineEdit") :
+				if $VBoxContainer/HBoxContainer/Label.editable != true :
+					move = true
+			if $VBoxContainer/HBoxContainer/Label.is_class("Label") :
+				move = true
+		if event.doubleclick  :
+			if $VBoxContainer/HBoxContainer/Label.is_class("LineEdit") :
+				$VBoxContainer/HBoxContainer/Label.editable = true
+				move = false
 
 
 
 
 func _input(event: InputEvent) -> void:
-	
-	if event.is_action_pressed("temp") and $VBoxContainer/HBoxContainer/Label.editable == true:
-		$VBoxContainer/HBoxContainer/Label.editable = false
+
+	if event.is_action_pressed("temp") and $VBoxContainer/HBoxContainer/Label.is_class("LineEdit") :
+		if $VBoxContainer/HBoxContainer/Label.editable == true :
+			$VBoxContainer/HBoxContainer/Label.editable = false
 		
 	if event.is_action_released("ui_accept") and move == true :
 			move = false
